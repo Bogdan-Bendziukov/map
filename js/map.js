@@ -28,12 +28,16 @@ class worldMap {
 		this.worldMapConfig = worldMapConfig;
 		this.worldMapContainer = document.getElementById("worldmap");
 		this.worldMapSvg = document.getElementById("worldmapsvg");
+		this.worldMapScroll = document.getElementById("worldmapscroll");
 		this.paths = this.worldMapSvg.getElementsByTagName("path");
 		this.countries = this.worldMapConfig.countries;
 		this.showCountries();
+		this.calcMapBgWidth();
 		window.addEventListener("resize", () => {
+			setTimeout(() => {
 			this.reload();
 			console.log('resized');
+			}, 200);
 		}, false);
 	}
 	showCountries() {
@@ -67,7 +71,7 @@ class worldMap {
 					marker.setAttribute('class', 'map__marker');
 					marker.setAttribute('id', 'marker' + Object.keys(this.countries)[i]);
 					marker.setAttribute('style', 'left:' + markerX + 'px; top:' + markerY + 'px;' );
-					this.worldMapContainer.appendChild(marker);
+					this.worldMapScroll.appendChild(marker);
 
 					this.paths[n].addEventListener("mouseenter", function( event ) {
 						if (window.matchMedia("(hover: hover)").matches) {
@@ -76,10 +80,10 @@ class worldMap {
 							banner.innerHTML = self.countries[Object.keys(self.countries)[i]].html;
 							banner.appendChild(bannerLine);
 							
-							let x1 = bannerLine.getBoundingClientRect().left;
-							let y1 = bannerLine.getBoundingClientRect().bottom;
-							let x2 = document.getElementById('marker' + event.target.id).offsetLeft + (document.getElementById('marker' + event.target.id).offsetWidth/2);
-							let y2 = document.getElementById('marker' + event.target.id).offsetTop + (document.getElementById('marker' + event.target.id).offsetHeight/2);
+							let x1 = self.getOffset(bannerLine).left;
+							let y1 = self.getOffset(bannerLine).bottom;
+							let x2 = document.getElementById('marker' + event.target.id).offsetLeft;
+							let y2 = document.getElementById('marker' + event.target.id).offsetTop;
 
 							
 
@@ -108,26 +112,65 @@ class worldMap {
 						if (window.matchMedia("(hover: hover)").matches) {
 							window.location.href = self.countries[Object.keys(self.countries)[i]].link;
 						} else {
+							for (let i = 0; i < self.worldMapContainer.querySelectorAll('.map__marker').length; i += 1) {
+								self.worldMapContainer.querySelectorAll('.map__marker')[i].classList.remove('selected');
+							}
 							banner.classList.toggle('show', true);
 							document.getElementById('marker' + event.target.id).classList.toggle('selected', true);
 							banner.innerHTML = self.countries[Object.keys(self.countries)[i]].html;
 							banner.appendChild(bannerLine);
+							
+							banner.removeEventListener('click', bannerClick, false);
+							banner.addEventListener("click", bannerClick, false);
 						}
 					}, false);
+					
+					let bannerClick = function(){						
+						if (window.matchMedia("(hover: hover)").matches) {
+							
+						} else {
+							window.location.href = self.countries[Object.keys(self.countries)[i]].link;
+						}
+					}
+					
 					
 					break;
 				}
 			};
 		}
 		
-		window.addEventListener('click', function(e){   
-			if (self.worldMapSvg.contains(e.target)){
-				// Clicked in box
-			} else{
-				// Clicked outside the box
+		window.addEventListener('click', function(e){
+			let clickedOutside = true;
+			for (let i = 0; i < self.worldMapSvg.querySelectorAll('path').length; i += 1) {
+				if (self.worldMapSvg.querySelectorAll('path')[i].contains(e.target) && e.target.classList.contains('show') || e.target.classList.contains('map__banner')){
+					// Clicked in box
+					clickedOutside = false;
+					break;
+				} else{
+					// Clicked outside the box
+					
+					
+				}
+			}
+			if (clickedOutside) {
+				banner.classList.remove('show');
+				for (let i = 0; i < self.worldMapContainer.querySelectorAll('.map__marker').length; i += 1) {
+					self.worldMapContainer.querySelectorAll('.map__marker')[i].classList.remove('selected');
+				}
 			}
 		});
+		
+		
+		
 
+	}
+	calcMapBgWidth() {
+		if (window.matchMedia("(max-width: 1300px)").matches) {
+			console.log('matches');
+			document.getElementById("worldmapbg").style.width = this.worldMapSvg.getBoundingClientRect().width + 'px';
+		} else {
+			document.getElementById("worldmapbg").style.width = '';
+		}
 	}
 	reload(){
 		for (let n = 0; n < this.paths.length; n++) {
@@ -145,11 +188,27 @@ class worldMap {
 				}
 			};
 		}
+		this.calcMapBgWidth();
 	}
-	
+	getOffset(element){
+		var bound = element.getBoundingClientRect();
+		var html = document.documentElement;
+
+		return {
+			top: bound.top + window.pageYOffset - html.clientTop,
+			bottom: bound.bottom + window.pageYOffset - html.clientTop,
+			left: bound.left + window.pageXOffset - html.clientLeft
+		};
+	}
 	
 }
 console.time('timer1');
 const myWorldMap = new worldMap(worldMapConfig);
+const viewer = new TouchScroll();
+viewer.init({
+	id: 'worldmapscroll',
+	draggable: true,
+	wait: false
+});
 console.timeEnd('timer1');
 

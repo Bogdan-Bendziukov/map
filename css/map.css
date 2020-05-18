@@ -57,13 +57,14 @@ body {
     top: 0;
 }
 #worldmapsvg path {
-	stroke-width: 1px;
+	stroke-width: 0.5px;
 	fill: transparent;
 }
 #worldmapsvg path.show {
 	display: block;
 	cursor: pointer;
 	transition: all 300ms ease-in;	
+	    stroke: #fff;
 }
 #worldmapsvg path.show:hover {
 	fill: rgba(0,0,0,.5);	
@@ -112,7 +113,7 @@ body {
 	padding: 25px 30px;
 	color: #fff;
 	visibility: hidden;
-	transition: all 300ms ease-in;
+	transition: opacity 300ms ease-in;
 	opacity: 0;
 	bottom: 20%;
 	right: 0;
@@ -145,4 +146,39 @@ body {
 }
 #map__line.show {
 	opacity: 1;
+}
+#worldmapscroll {
+	position: relative;
+	width: 100%;
+	height: 100%;	
+}
+#worldmapscroll::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+@media (max-width: 1300px) {
+	#worldmapscroll {
+		overflow: auto;
+		cursor: grab;
+	}
+	#worldmap {
+		
+	}
+	#worldmapbg {
+		
+	}
+	#worldmapsvg {
+		width: auto;
+	}
+	#map__line, .map__banner-line {
+		display: none;
+	}
+	.map__banner.show {   
+		bottom: 0;
+		right: 0;
+		left: 0;
+		max-width: 400px;
+		margin: auto;
+		padding: 10px 20px;
+	}
 }
