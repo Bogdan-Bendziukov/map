@@ -1,6 +1,7 @@
 body {
 	padding: 0;
 	margin: 0;
+	background: #242e3a;
 }
 @keyframes marker_rotating {
   from {
@@ -120,6 +121,13 @@ body {
 .map__banner.show {
 	visibility: visible;
 	opacity: 1;
+}
+.map__banner-line {
+	position: absolute;
+	width: 100px;
+	border-bottom: 1px solid #fff;
+	bottom: 30px;
+	right: 100%;
 }
 #map__svg {
 	position: absolute;

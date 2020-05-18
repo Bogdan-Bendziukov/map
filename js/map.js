@@ -41,6 +41,9 @@ class worldMap {
 		let banner = document.createElement('div');		
 		banner.setAttribute('class', 'map__banner');
 		banner.setAttribute('id', 'map__banner');
+		let bannerLine = document.createElement('span');		
+		bannerLine.setAttribute('class', 'map__banner-line');
+		bannerLine.setAttribute('id', 'map__banner-line');		
 		
 		this.worldMapContainer.appendChild(banner);
 		
@@ -71,11 +74,14 @@ class worldMap {
 							banner.classList.add('show');
 							document.getElementById('marker' + event.target.id).classList.add('selected');
 							banner.innerHTML = self.countries[Object.keys(self.countries)[i]].html;
+							banner.appendChild(bannerLine);
 							
-							let x1 = banner.offsetLeft + (banner.offsetWidth/2);
-							let y1 = banner.offsetTop + (banner.offsetHeight/2);
+							let x1 = bannerLine.getBoundingClientRect().left;
+							let y1 = bannerLine.getBoundingClientRect().bottom;
 							let x2 = document.getElementById('marker' + event.target.id).offsetLeft + (document.getElementById('marker' + event.target.id).offsetWidth/2);
 							let y2 = document.getElementById('marker' + event.target.id).offsetTop + (document.getElementById('marker' + event.target.id).offsetHeight/2);
+
+							
 
 							line.setAttribute('x1',x1);
 							line.setAttribute('y1',y1);
@@ -105,6 +111,7 @@ class worldMap {
 							banner.classList.toggle('show', true);
 							document.getElementById('marker' + event.target.id).classList.toggle('selected', true);
 							banner.innerHTML = self.countries[Object.keys(self.countries)[i]].html;
+							banner.appendChild(bannerLine);
 						}
 					}, false);
 					
