@@ -14,9 +14,61 @@ const worldMapConfig = {
 			"html": "<p><strong>China, г. Beijing, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
 			"link": "#cn"
 		},
+		"IN": {
+			"html": "<p><strong>India, г. Deli, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+375 (56) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#in"
+		},
 		"BY": {
-			"html": "<p><strong>Беларусь, г. Минск, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+375 (56) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#by"
+			"html": "<p><strong>Belarus, г. Minsk, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"AM": {
+			"html": "<p><strong>Armenia, г. Yerevan, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"AZ": {
+			"html": "<p><strong>Azerbaijan, г. Baku, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"GE": {
+			"html": "<p><strong>Georgia, г. Tbilissi, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"KZ": {
+			"html": "<p><strong>Kazakhstan, г. Nur-Sultan, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"KG": {
+			"html": "<p><strong>Kyrguzstan, г. Bishkek, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"MK": {
+			"html": "<p><strong>Macedonia, г. Skopje, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"MD": {
+			"html": "<p><strong>Moldova, г. Cishineu, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"MN": {
+			"html": "<p><strong>Mongolia, г. Ulan-Bator, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"SI": {
+			"html": "<p><strong>Slovenia, г. Ljubliana, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"TJ": {
+			"html": "<p><strong>Tajikistan, г. Dushanbe, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"TM": {
+			"html": "<p><strong>Turkmenistan, г. Ashkhabad, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
+		},
+		"UZ": {
+			"html": "<p><strong>Uzbekistan, г. Tashkent, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
+			"link": "#cn"
 		}
 	}
 }
