@@ -1,77 +1,6 @@
 "use strict";
 
-const worldMapConfig = {
-	"countries": {
-		"UA": {
-			"html": "<p><strong>Украина, г. Киев, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+38 (044) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#ua"
-		},
-		"RU": {
-			"html": "<p><strong>Россия, г. Москва, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#ru"
-		},
-		"CN": {
-			"html": "<p><strong>China, г. Beijing, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"IN": {
-			"html": "<p><strong>India, г. Deli, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+375 (56) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#in"
-		},
-		"BY": {
-			"html": "<p><strong>Belarus, г. Minsk, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"AM": {
-			"html": "<p><strong>Armenia, г. Yerevan, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"AZ": {
-			"html": "<p><strong>Azerbaijan, г. Baku, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"GE": {
-			"html": "<p><strong>Georgia, г. Tbilissi, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"KZ": {
-			"html": "<p><strong>Kazakhstan, г. Nur-Sultan, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"KG": {
-			"html": "<p><strong>Kyrguzstan, г. Bishkek, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"MK": {
-			"html": "<p><strong>Macedonia, г. Skopje, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"MD": {
-			"html": "<p><strong>Moldova, г. Cishineu, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"MN": {
-			"html": "<p><strong>Mongolia, г. Ulan-Bator, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"SI": {
-			"html": "<p><strong>Slovenia, г. Ljubliana, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"TJ": {
-			"html": "<p><strong>Tajikistan, г. Dushanbe, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"TM": {
-			"html": "<p><strong>Turkmenistan, г. Ashkhabad, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		},
-		"UZ": {
-			"html": "<p><strong>Uzbekistan, г. Tashkent, ул. Донецкая, 16/2 03151</strong></p><p>телефон: <strong>+7 (495) 594-98-98</strong><br><strong>+38 (044) 492-29-29</strong></p><p>электронная почта.:  <strong>info@muk.u</strong></p>",
-			"link": "#cn"
-		}
-	}
-}
+
 
 
 
@@ -83,8 +12,9 @@ class worldMap {
 		this.worldMapScroll = document.getElementById("worldmapscroll");
 		this.paths = this.worldMapSvg.getElementsByTagName("path");
 		this.countries = this.worldMapConfig.countries;
-		this.showCountries();
 		this.calcMapBgWidth();
+		this.showCountries();
+		
 		window.addEventListener("resize", () => {
 			setTimeout(() => {
 			this.reload();
@@ -122,7 +52,7 @@ class worldMap {
 					
 					marker.setAttribute('class', 'map__marker');
 					marker.setAttribute('id', 'marker' + Object.keys(this.countries)[i]);
-					marker.setAttribute('style', 'left:' + markerX + 'px; top:' + markerY + 'px;' );
+					marker.setAttribute('style', 'left:' + markerX + 'px; top:calc(' + markerY + 'px + ' + this.worldMapConfig.offsetTop + 'vh)' );
 					this.worldMapScroll.appendChild(marker);
 
 					this.paths[n].addEventListener("mouseenter", function( event ) {
@@ -134,8 +64,8 @@ class worldMap {
 							
 							let x1 = self.getOffset(bannerLine).left;
 							let y1 = self.getOffset(bannerLine).bottom;
-							let x2 = document.getElementById('marker' + event.target.id).offsetLeft;
-							let y2 = document.getElementById('marker' + event.target.id).offsetTop;
+							let x2 = self.getOffset(document.getElementById('marker' + event.target.id)).left + document.getElementById('marker' + event.target.id).offsetWidth/2;
+							let y2 = self.getOffset(document.getElementById('marker' + event.target.id)).top + document.getElementById('marker' + event.target.id).offsetHeight/2;
 
 							
 
@@ -217,14 +147,20 @@ class worldMap {
 
 	}
 	calcMapBgWidth() {
-		if (window.matchMedia("(max-width: 1300px)").matches) {
+		//if (window.matchMedia("(max-width: 1300px)").matches) {
 			console.log('matches');
+			this.worldMapSvg.style.height = this.worldMapConfig.zoom + 'vh';
 			document.getElementById("worldmapbg").style.width = this.worldMapSvg.getBoundingClientRect().width + 'px';
-		} else {
-			document.getElementById("worldmapbg").style.width = '';
-		}
+			document.getElementById("worldmapbg").style.height = this.worldMapSvg.getBoundingClientRect().height + 'px';
+			document.getElementById("worldmapbg").style.backgroundPosition = 'center top ' + this.worldMapConfig.offsetTop + 'vh';
+			this.worldMapSvg.style.top = this.worldMapConfig.offsetTop + 'vh';
+			
+		//} else {
+		//	document.getElementById("worldmapbg").style.width = '';
+		//}
 	}
 	reload(){
+		this.calcMapBgWidth();
 		for (let n = 0; n < this.paths.length; n++) {
 			for (let i = 0; i < Object.keys(this.countries).length; i++) {
 				
@@ -240,7 +176,7 @@ class worldMap {
 				}
 			};
 		}
-		this.calcMapBgWidth();
+		
 	}
 	getOffset(element){
 		var bound = element.getBoundingClientRect();
