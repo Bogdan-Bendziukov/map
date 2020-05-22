@@ -170,7 +170,8 @@ class worldMap {
 					let markerX = Math.round(this.paths[n].getBoundingClientRect().left + ((this.paths[n].getBoundingClientRect().right - this.paths[n].getBoundingClientRect().left) / 2) - this.worldMapSvg.getBoundingClientRect().left);
 					let markerY = Math.round(this.paths[n].getBoundingClientRect().top + ((this.paths[n].getBoundingClientRect().bottom - this.paths[n].getBoundingClientRect().top) / 2) - this.worldMapSvg.getBoundingClientRect().top);
 					
-					marker.setAttribute('style', 'left:' + markerX + 'px; top:' + markerY + 'px;' );					
+					marker.setAttribute('style', 'left:' + markerX + 'px; top:calc(' + markerY + 'px + ' + this.worldMapConfig.offsetTop + 'vh)' );
+									
 					
 					break;
 				}
