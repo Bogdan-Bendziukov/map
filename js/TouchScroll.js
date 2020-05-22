@@ -135,9 +135,9 @@ var TouchScroll = function () {
             if (this.drag === true) {
                 this.cancelEvent(e);
                 this.diffx = (this.startx - (e.clientX + this.el.scrollLeft));
-                this.diffy = (this.starty - (e.clientY + this.el.scrollTop));
+                //this.diffy = (this.starty - (e.clientY + this.el.scrollTop));
                 this.el.scrollLeft += this.diffx;
-                this.el.scrollTop += this.diffy;
+               // this.el.scrollTop += this.diffy;
             }
         },
         /**
@@ -160,7 +160,7 @@ var TouchScroll = function () {
                             me.drag = false;
                         } else {
                             me.el.scrollLeft += me.diffx * step;
-                            me.el.scrollTop += me.diffy * step;
+                            //me.el.scrollTop += me.diffy * step;
                             start -= me.time;
                             window.requestAnimationFrame(animate);
                         }

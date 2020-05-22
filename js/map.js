@@ -151,7 +151,7 @@ class worldMap {
 			console.log('matches');
 			this.worldMapSvg.style.height = this.worldMapConfig.zoom + 'vh';
 			document.getElementById("worldmapbg").style.width = this.worldMapSvg.getBoundingClientRect().width + 'px';
-			document.getElementById("worldmapbg").style.height = this.worldMapSvg.getBoundingClientRect().height + 'px';
+			//document.getElementById("worldmapbg").style.height = this.worldMapSvg.getBoundingClientRect().height + 'px';
 			document.getElementById("worldmapbg").style.backgroundPosition = 'center top ' + this.worldMapConfig.offsetTop + 'vh';
 			this.worldMapSvg.style.top = this.worldMapConfig.offsetTop + 'vh';
 			
